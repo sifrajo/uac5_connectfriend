@@ -4,7 +4,7 @@
     <div class="bg-grey-lighter min-h-screen flex flex-col">
         <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
             <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-                <h1 class="mb-8 text-3xl text-center">Sign In</h1>
+                <h1 class="mb-8 text-3xl text-center" style="color: #FF5FA2">Sign In</h1>
                 @if (Session()->has('loginError'))
                     <h2 class="text-red-500 text-xl">
                         {{ Session()->get('loginError') }}
@@ -34,7 +34,7 @@
                         @enderror
 
                     <button type="submit"
-                        class="w-full text-center bg-green-400 py-3 rounded-md text-white hover:bg-blue-400">Login</button>
+                        class="w-full text-center bg-green-400 py-3 rounded-md text-white hover:bg-blue-400" style="background-color: #FF5FA2">Login</button>
                 </form>
                 <div class="text-grey-dark mt-6">
                     Dont have account?

@@ -9,13 +9,24 @@ class UserController extends Controller
 {
     //
     public function casualidx(){
-        // $user = User::where('user_id', auth()->user()->id)->get();
-        $users = User::all();
+        $myId = auth()->user()->id;
+        $users = User::whereNotIn('id', [$myId])->get();
 
         return view('casual.home', compact('users'));
         // return view('participant.home');
     }
 
+    public function topup (Request $request){
+        $user = User::find(auth()->user()->id);
 
+        $user->wallet = $user->wallet + $request->wallet;
+        $user->update();
+
+        return redirect('/casual');
+    }
+
+    public function friend(){
+        return redirect('/friend');
+    }
 
 }

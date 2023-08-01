@@ -17,10 +17,12 @@ class LoginController extends Controller
             'instagram' => 'required|regex:/^@.+/',
             'gender' => 'required',
             'phone' => 'required|regex:/^[0-9]+$/',
-            'hobbies' => 'required'
+            'hobbies' => 'required',
+            'image' => 'required|image|file'
         ]);
 
         $validateData['password'] = bcrypt($validateData['password']);
+        $validateData['image'] = $request->file('image')->store('/');
 
         User::create($validateData);
 
@@ -55,5 +57,14 @@ class LoginController extends Controller
 
         return redirect()->back()->with('loginError', 'Login failed');
 
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

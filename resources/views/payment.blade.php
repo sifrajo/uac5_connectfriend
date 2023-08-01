@@ -28,7 +28,7 @@
                         placeholder="Wallet" required/>
 
                     <button type="submit"
-                        class="w-full text-center bg-green-400 py-3 rounded-md text-white hover:bg-blue-400">Pay</button>
+                        class="w-full text-center bg-green-400 py-3 rounded-md text-white hover:bg-blue-400" style="background-color: #FF5FA2">Pay</button>
                 </form>
             </div>
         </div>

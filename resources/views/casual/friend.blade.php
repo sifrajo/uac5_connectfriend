@@ -4,17 +4,9 @@
 
         <div class="row mx-12">
             <div class="flex justify-between">
-                <ul>
-
-                    <h1 class="text-2xl">
-                        For You
-                    </h1>
-
-                    <a href="/casual/friend" style="background-color: #FF5FA2"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-danger-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Friend List
-                    </a>
-                </ul>
+                <h1 class="text-2xl">
+                    For You
+                </h1>
 
                 <div>
                     <h1 class="text-md">
@@ -96,33 +88,10 @@
                                     </p>
                                 </div>
 
-                                {{-- <a href="/casual/crush/{{$user->id}}"
+                                <a href="/casual/crush/{{$user->id}}"
                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-danger-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     Like
-                                </a> --}}
-                                <div class="flex gap-5 my-5">
-                                    <form action="/casual/like" method="post">
-                                        @csrf
-
-                                        <input type="hidden" value="{{ $user->id }}" name="liked_id">
-                                        <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
-
-                                        <button style="background-color: #FF5FA2" type="submit" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-danger-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            Like
-                                        </button>
-                                    </form>
-
-                                    <form action="/casual/like" method="post">
-                                        @csrf
-
-                                        <input type="hidden" value="{{ $user->id }}" name="liked_id">
-                                        <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
-
-                                        <button style="background-color: #FF5FA2" type="submit" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-danger-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            Dislike
-                                        </button>
-                                    </form>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     @endforeach
