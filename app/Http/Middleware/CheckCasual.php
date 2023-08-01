@@ -16,6 +16,10 @@ class CheckCasual
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!auth()->user()){
+            abort(403);
+
+        }
         return $next($request);
     }
 }
