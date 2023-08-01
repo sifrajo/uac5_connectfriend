@@ -33,15 +33,15 @@ class LoginController extends Controller
         $wallet = $request->wallet;
         $rand = $request->rand;
 
-        // if($wallet == $rand){
+        if($wallet == $rand){
             return redirect('/login')->with('registerSuccess', 'You success register');
-        // }
-        // else if($wallet < $rand){
-        //     return redirect('/payment')->with('underPaid', 'You are still underpaid');
-        // }
-        // else{
-        //     return redirect('/payment')->with('overPaid', 'Sorry you overpaid, would you like to enter a balance');
-        // }
+        }
+        else if($wallet < $rand){
+            return redirect('/payment')->with('underPaid', 'You are still underpaid');
+        }
+        else{
+            return redirect('/payment')->with('overPaid', 'Sorry you overpaid, would you like to enter a balance');
+        }
     }
 
     public function login(Request $request){
